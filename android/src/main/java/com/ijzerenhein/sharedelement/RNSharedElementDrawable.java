@@ -307,11 +307,9 @@ class RNSharedElementDrawable extends Drawable {
     drawable.setColor(style.backgroundColor);
 
     // Set border
-    float borderColorRGB = (float) (style.borderColor & 0x00FFFFFF);
-    float borderColorAlpha = (float) (style.borderColor >>> 24);
     drawable.setBorderStyle(style.borderStyle);
     for (int i = 0; i < 4; i++) {
-      drawable.setBorderColor(i, borderColorRGB, borderColorAlpha);
+      drawable.setBorderColor(i, style.borderColor);
       drawable.setBorderWidth(i, style.borderWidth);
     }
     drawable.setRadius(style.borderTopLeftRadius, 0);
